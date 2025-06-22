@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react'
 import { fetchWorkouts } from '@/lib/api'
 import { Workout } from '@/types'
+import WorkoutForm from '../components/WorkoutForm'
 
 export default function DashboardPage() {
   const [workouts, setWorkouts] = useState<Workout[]>([])
@@ -12,9 +13,13 @@ export default function DashboardPage() {
 
   return (
     <main className="p-6">
-      <h1 className="text-2xl font-bold mb-4">今日のトレーニング記録</h1>
       {workouts.map((workout) => (
-        <div key={workout.id} className="mb-4 p-4 border rounded-xl shadow">
+        <div
+          key={workout.id}
+          className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100"
+        >
+          <div className="text-xl font-bold mb-4">今日の記録</div>
+
           <p className="font-semibold">
             {workout.date} - {workout.note}
           </p>
@@ -28,6 +33,9 @@ export default function DashboardPage() {
           </ul>
         </div>
       ))}
+
+      {/* トレーニング記録 */}
+      <WorkoutForm />
     </main>
   )
 }
