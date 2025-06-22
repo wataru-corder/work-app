@@ -1,0 +1,20 @@
+{
+  "workouts": [
+    {
+      "id": "w1",
+      "userId": "u1",
+      "date": "2025-06-22",
+      "note": "胸トレ",
+      "records": [
+        {
+          "id": "r1",
+          "exercise": "ベンチプレス",
+          "weight": 60,
+          "reps": 10,
+          "sets": 3,
+          "memo": "調子よし"
+        }
+      ]
+    }
+  ]
+}
