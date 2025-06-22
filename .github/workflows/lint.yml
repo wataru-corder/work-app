@@ -1,6 +1,9 @@
 name: Lint and Format Check
 
 on:
+  push:
+    branches:
+      - '**' # すべてのブランチで実行（必要に応じて絞ってもOK）
   pull_request:
     branches:
       - '**'
