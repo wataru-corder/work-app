@@ -40,7 +40,7 @@ const WorkoutForm = ({ onPostSuccess }: { onPostSuccess: () => void }) => {
     }
 
     try {
-      const res = await fetch('http://localhost:4000/workouts', {
+      await fetch('http://localhost:4000/workouts', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
