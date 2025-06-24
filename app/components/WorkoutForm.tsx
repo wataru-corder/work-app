@@ -7,7 +7,6 @@ import {
   Target,
   Weight,
 } from 'lucide-react'
-import { useRouter } from 'next/navigation'
 import React, { useState } from 'react'
 import { v4 as uuid } from 'uuid'
 
