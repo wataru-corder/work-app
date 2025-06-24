@@ -7,8 +7,18 @@ import WorkoutForm from '../components/WorkoutForm'
 export default function DashboardPage() {
   const [workouts, setWorkouts] = useState<Workout[]>([])
 
+  const loadWorkouts = async () => {
+    try {
+      const data = await fetchWorkouts()
+      setWorkouts(data)
+    } catch (err) {
+      alert('取得失敗')
+      console.log(err)
+    }
+  }
+
   useEffect(() => {
-    fetchWorkouts().then(setWorkouts).catch(console.error)
+    loadWorkouts()
   }, [])
 
   return (
@@ -35,7 +45,7 @@ export default function DashboardPage() {
       ))}
 
       {/* トレーニング記録 */}
-      <WorkoutForm />
+      <WorkoutForm onPostSuccess={loadWorkouts} />
     </main>
   )
 }
