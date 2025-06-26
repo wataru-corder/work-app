@@ -23,12 +23,14 @@ export default function DashboardPage() {
   }, [])
 
   return (
-    <main className="p-6">
-      <div className="flex">
+    <main className="p-6 w-[90%] max-w-[1200px] mx-auto">
+      <div className="flex w-full gap-10">
         {/* トレーニング記録 */}
         <WorkoutForm onPostSuccess={loadWorkouts} />
         {/* 今日のトレーニング記録の表示 */}
-        <WorkoutList workout={workouts} />
+        <div className="flex-1">
+          <WorkoutList workout={workouts} />
+        </div>
       </div>
     </main>
   )
