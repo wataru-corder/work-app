@@ -53,6 +53,7 @@ const WorkoutForm = ({ onPostSuccess }: { onPostSuccess: () => void }) => {
       setWeight('')
       setReps('')
       setSets('')
+      setMemo('')
       setDate(new Date().toISOString().slice(0, 10))
       onPostSuccess()
     } catch (err) {
