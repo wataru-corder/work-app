@@ -47,6 +47,22 @@
           "memo": "aa"
         }
       ]
+    },
+    {
+      "id": "20a62b63-d8f3-48f8-a866-311ca2bf00d1",
+      "userId": "u1",
+      "date": "2025-06-26",
+      "note": "今日は楽！",
+      "records": [
+        {
+          "id": "11b3fd6b-e48e-48d3-8b65-b9e50981c1c1",
+          "exercise": "スクワット",
+          "weight": 50,
+          "reps": 8,
+          "sets": 3,
+          "memo": "今日は楽！"
+        }
+      ]
     }
   ]
 }
