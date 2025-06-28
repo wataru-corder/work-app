@@ -17,50 +17,34 @@
       ]
     },
     {
-      "id": "86710c9e-3431-4369-ba64-1a16782fcbf7",
+      "id": "793a697a-5246-49f2-828f-ea4d3f24652d",
       "userId": "u1",
-      "date": "2025-06-24",
-      "note": "メモ",
+      "date": "2025-06-28",
+      "note": "3",
       "records": [
         {
-          "id": "05f3487c-2e14-4381-a190-8fe49fd079ea",
-          "exercise": "ベンチプレス",
-          "weight": 80,
-          "reps": 10,
+          "id": "549c3d0c-87c5-4b53-9eb0-af04f2626dee",
+          "exercise": "32",
+          "weight": 32,
+          "reps": 3,
           "sets": 3,
-          "memo": "メモ"
+          "memo": "3"
         }
       ]
     },
     {
-      "id": "f4f567fc-e2f6-432c-b9d0-0b8e074985a6",
+      "id": "689ab9db-95a7-4d46-9f9b-03c66327bca9",
       "userId": "u1",
-      "date": "2025-06-24",
-      "note": "aa",
+      "date": "2025-06-28",
+      "note": "2",
       "records": [
         {
-          "id": "5c522cd3-c09f-4ae4-b698-305f6629dc5f",
-          "exercise": "ベンチ",
-          "weight": 40,
-          "reps": 12,
-          "sets": 3,
-          "memo": "aa"
-        }
-      ]
-    },
-    {
-      "id": "20a62b63-d8f3-48f8-a866-311ca2bf00d1",
-      "userId": "u1",
-      "date": "2025-06-26",
-      "note": "今日は楽！",
-      "records": [
-        {
-          "id": "11b3fd6b-e48e-48d3-8b65-b9e50981c1c1",
-          "exercise": "スクワット",
-          "weight": 50,
-          "reps": 8,
-          "sets": 3,
-          "memo": "今日は楽！"
+          "id": "3f658925-4341-4f23-9aab-bcf537fbc695",
+          "exercise": "2",
+          "weight": 2,
+          "reps": 2,
+          "sets": 2,
+          "memo": "2"
         }
       ]
     }
