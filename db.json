@@ -47,6 +47,22 @@
           "memo": ""
         }
       ]
+    },
+    {
+      "id": "19fd323b-bbe1-4f2b-a62f-95182bd5702d",
+      "userId": "u1",
+      "date": "2025-06-28",
+      "note": "",
+      "records": [
+        {
+          "id": "cecd47f2-e247-4817-9678-056c014fef9a",
+          "exercise": "デットリフト",
+          "weight": 120,
+          "reps": 8,
+          "sets": 12,
+          "memo": ""
+        }
+      ]
     }
   ]
 }
