@@ -1,3 +1,5 @@
+'use client'
+
 import {
   Calendar,
   Dumbbell,
@@ -10,7 +12,7 @@ import {
 import React, { useState } from 'react'
 import { v4 as uuid } from 'uuid'
 
-const WorkoutForm = ({ onPostSuccess }: { onPostSuccess: () => void }) => {
+const WorkoutForm = () => {
   const [date, setDate] = useState(new Date().toISOString().slice(0, 10))
   const [exercise, setExercise] = useState('')
   const [weight, setWeight] = useState('')
@@ -55,7 +57,6 @@ const WorkoutForm = ({ onPostSuccess }: { onPostSuccess: () => void }) => {
       setSets('')
       setMemo('')
       setDate(new Date().toISOString().slice(0, 10))
-      onPostSuccess()
     } catch (err) {
       alert('エラーが発生しました')
       console.log(err)
