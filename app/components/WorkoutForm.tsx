@@ -1,5 +1,6 @@
 'use client'
 
+import { postWorkouts } from '@/lib/api'
 import {
   Calendar,
   Dumbbell,
@@ -42,13 +43,7 @@ const WorkoutForm = () => {
     }
 
     try {
-      await fetch('http://localhost:4000/workouts', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(workout),
-      })
+      await postWorkouts(workout)
 
       // リセット
       setExercise('')

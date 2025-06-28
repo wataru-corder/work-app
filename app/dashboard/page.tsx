@@ -1,9 +1,9 @@
-import { fetchWorkouts } from '@/lib/api'
+import { getWorkouts } from '@/lib/api'
 import WorkoutForm from '../components/WorkoutForm'
 import WorkoutList from '../components/WorkoutList'
 
 export default async function DashboardPage() {
-  const workouts = await fetchWorkouts()
+  const workouts = await getWorkouts()
 
   return (
     <main className="p-6 w-[90%] max-w-[1200px] mx-auto">

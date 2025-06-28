@@ -31,6 +31,22 @@
           "memo": "3"
         }
       ]
+    },
+    {
+      "id": "689ab9db-95a7-4d46-9f9b-03c66327bca9",
+      "userId": "u1",
+      "date": "2025-06-28",
+      "note": "2",
+      "records": [
+        {
+          "id": "3f658925-4341-4f23-9aab-bcf537fbc695",
+          "exercise": "2",
+          "weight": 2,
+          "reps": 2,
+          "sets": 2,
+          "memo": "2"
+        }
+      ]
     }
   ]
 }
