@@ -17,34 +17,34 @@
       ]
     },
     {
-      "id": "793a697a-5246-49f2-828f-ea4d3f24652d",
+      "id": "f48ef2f1-6818-4f70-8741-601c181cf075",
       "userId": "u1",
       "date": "2025-06-28",
-      "note": "3",
+      "note": "",
       "records": [
         {
-          "id": "549c3d0c-87c5-4b53-9eb0-af04f2626dee",
-          "exercise": "32",
-          "weight": 32,
-          "reps": 3,
+          "id": "9d29425a-1703-4e8b-b119-e90e8d8432e6",
+          "exercise": "ベンチプレス",
+          "weight": 90,
+          "reps": 8,
           "sets": 3,
-          "memo": "3"
+          "memo": ""
         }
       ]
     },
     {
-      "id": "689ab9db-95a7-4d46-9f9b-03c66327bca9",
+      "id": "3b223f81-1881-496b-bae3-4d1a2bf70178",
       "userId": "u1",
       "date": "2025-06-28",
-      "note": "2",
+      "note": "",
       "records": [
         {
-          "id": "3f658925-4341-4f23-9aab-bcf537fbc695",
-          "exercise": "2",
-          "weight": 2,
-          "reps": 2,
+          "id": "c77ba82e-7fb1-46f3-8427-07c53c54b7e9",
+          "exercise": "スクワット",
+          "weight": 90,
+          "reps": 7,
           "sets": 2,
-          "memo": "2"
+          "memo": ""
         }
       ]
     }
