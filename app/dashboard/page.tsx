@@ -101,8 +101,18 @@ export default async function DashboardPage() {
       {/* Workout Tabs */}
       <Tabs defaultValue="today" className="space-y-4">
         <TabsList className="grid w-full grid-cols-2">
-          <TabsTrigger value="today">今日のワークアウト</TabsTrigger>
-          <TabsTrigger value="recent">最近のワークアウト</TabsTrigger>
+          <TabsTrigger
+            value="today"
+            className="cursor-pointer data-[state=active]:bg-white rounded data-[state=active]:text-gray-900 data-[state=active]:font-semibold duration-300"
+          >
+            今日のワークアウト
+          </TabsTrigger>
+          <TabsTrigger
+            value="recent"
+            className="cursor-pointer data-[state=active]:bg-white rounded data-[state=active]:text-gray-800 data-[state=active]:font-semibold duration-300"
+          >
+            最近のワークアウト
+          </TabsTrigger>
         </TabsList>
 
         <TabsContent value="today" className="space-y-4">
@@ -127,8 +137,6 @@ export default async function DashboardPage() {
           </div>
         </TabsContent>
       </Tabs>
-
-      {/* 今日のトレーニング記録の表示 */}
     </main>
   )
 }
