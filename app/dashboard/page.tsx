@@ -4,6 +4,8 @@ import { DialogCloseButton } from '@/components/DialogCloseButton'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Calendar, Dumbbell, TrendingUp } from 'lucide-react'
 import { Workout } from '@/types'
+import { Tabs, TabsContent, TabsTrigger } from '@radix-ui/react-tabs'
+import { TabsList } from '@/components/ui/tabs'
 
 export default async function DashboardPage() {
   const workouts = await getWorkouts()
@@ -76,7 +78,7 @@ export default async function DashboardPage() {
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
-              {getCurrentStreak(workouts)}日
+              {getCurrentStreak(workouts)}
             </div>
             <p className="text-xs text-muted-foreground">最近の記録</p>
           </CardContent>
@@ -96,10 +98,37 @@ export default async function DashboardPage() {
         </Card>
       </div>
 
+      {/* Workout Tabs */}
+      <Tabs defaultValue="today" className="space-y-4">
+        <TabsList className="grid w-full grid-cols-2">
+          <TabsTrigger value="today">今日のワークアウト</TabsTrigger>
+          <TabsTrigger value="recent">最近のワークアウト</TabsTrigger>
+        </TabsList>
+
+        <TabsContent value="today" className="space-y-4">
+          <div className="w-full">
+            <WorkoutList workout={todyWorkout} />
+          </div>
+        </TabsContent>
+
+        <TabsContent value="recent" className="space-y-4">
+          <div className="w-full">
+            <Card>
+              <CardContent className="flex flex-col items-center justify-center py-12">
+                <Calendar className="h-12 w-12 text-muted-foreground mb-4" />
+                <h3 className="text-lg font-semibold mb-2">
+                  ワークアウト履歴がありません
+                </h3>
+                <p className="text-muted-foreground text-center">
+                  ワークアウトを記録すると、ここに履歴が表示されます。
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </TabsContent>
+      </Tabs>
+
       {/* 今日のトレーニング記録の表示 */}
-      <div className="w-full">
-        <WorkoutList workout={todyWorkout} />
-      </div>
     </main>
   )
 }
