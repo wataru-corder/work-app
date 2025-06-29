@@ -15,3 +15,9 @@ export async function postWorkouts(workout: Workout) {
   })
   return res.json()
 }
+export async function deleteWorkouts(id: string) {
+  const res = await fetch(`${API_URL}/workouts/${id}`, {
+    method: 'DELETE',
+  })
+  return res.json()
+}
