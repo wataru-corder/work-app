@@ -1,14 +1,28 @@
+'use client'
 import { Workout } from '@/types'
 import { Dumbbell, Edit, Hash, RotateCcw, Trash2, Weight } from 'lucide-react'
 import { Card, CardContent } from './ui/card'
 
 import { DialogCloseButton } from './DialogCloseButton'
+import { deleteWorkouts } from '@/lib/api'
+import { useRouter } from 'next/navigation'
 
 type workoutListProps = {
   workout: Workout[]
 }
 
 const WorkoutList = ({ workout }: workoutListProps) => {
+  const router = useRouter()
+  const handleDelete = async (id: string) => {
+    try {
+      await deleteWorkouts(id)
+      router.refresh()
+    } catch (err) {
+      alert('削除失敗')
+      console.log(err)
+    }
+  }
+
   if (workout.length === 0) {
     return (
       <Card>
@@ -39,7 +53,9 @@ const WorkoutList = ({ workout }: workoutListProps) => {
             </div>
             <div className="flex gap-3">
               <Edit className="h-4 w-4" />
-              <Trash2 className="h-4 w-4 text-red-500" />
+              <button onClick={() => handleDelete(workout.id)}>
+                <Trash2 className="h-4 w-4 text-red-500" />
+              </button>
             </div>
           </div>
           {workout.records.map((r) => (

@@ -56,7 +56,7 @@ const WorkoutForm = () => {
       setSets('')
       setMemo('')
       setDate(new Date().toISOString().slice(0, 10))
-      router.push('/dashboard')
+      router.refresh()
     } catch (err) {
       alert('エラーが発生しました')
       console.log(err)
