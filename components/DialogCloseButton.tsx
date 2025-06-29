@@ -1,11 +1,5 @@
-import {
-  Dialog,
-  DialogContent,
-  DialogTitle,
-  DialogTrigger,
-} from '@/components/ui/dialog'
+import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog'
 
-import { Button } from './ui/button'
 import WorkoutForm from './WorkoutForm'
 import { Plus } from 'lucide-react'
 

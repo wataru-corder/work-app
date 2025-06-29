@@ -11,9 +11,9 @@ export default async function DashboardPage() {
 
   const todyWorkout = workouts.filter((workout) => workout.date === today)
 
-  const todayWorkouts = () => {}
-  const getTotalWorkouts = () => {}
-  const getTotalVolume = () => {}
+  // const todayWorkouts = () => {}
+  // const getTotalWorkouts = () => {}
+  // const getTotalVolume = () => {}
   return (
     <main className="p-6 w-[95%] max-w-[1400px] mx-auto">
       <div className="">
