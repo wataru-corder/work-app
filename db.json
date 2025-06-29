@@ -63,6 +63,38 @@
           "memo": ""
         }
       ]
+    },
+    {
+      "id": "df4baf2d-67e8-49a2-96de-cf916a37d92b",
+      "userId": "u1",
+      "date": "2025-06-29",
+      "note": "",
+      "records": [
+        {
+          "id": "1d4b50c4-4c2f-42bb-8d4c-0708334e4a18",
+          "exercise": "ベンチ",
+          "weight": 60,
+          "reps": 2,
+          "sets": 2,
+          "memo": ""
+        }
+      ]
+    },
+    {
+      "id": "1ede2619-a7c5-4526-a6cf-1d75d6cc399e",
+      "userId": "u1",
+      "date": "2025-06-29",
+      "note": "",
+      "records": [
+        {
+          "id": "20466088-a1b6-4f4c-9e6e-5c8acfb5d8cd",
+          "exercise": "スクワット",
+          "weight": 80,
+          "reps": 8,
+          "sets": 2,
+          "memo": ""
+        }
+      ]
     }
   ]
 }
