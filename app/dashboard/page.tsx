@@ -3,6 +3,7 @@ import WorkoutList from '@/components/WorkoutList'
 import { DialogCloseButton } from '@/components/DialogCloseButton'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Calendar, Dumbbell, TrendingUp } from 'lucide-react'
+import { Workout } from '@/types'
 
 export default async function DashboardPage() {
   const workouts = await getWorkouts()
@@ -11,27 +12,46 @@ export default async function DashboardPage() {
 
   const todyWorkout = workouts.filter((workout) => workout.date === today)
 
-  const getTotalVolume = () => {
+  const getTotalVolume = (): number => {
     const today = todyWorkout.map((t) => t.records)
     const weight = today.map((r) => r.map((t) => t.weight * t.reps * t.sets))
     const totalWeight = weight.flat().reduce((acc, curr) => acc + curr, 0)
     return totalWeight
   }
+  function getCurrentStreak(workouts: Workout[]): number {
+    const dateSet = new Set(
+      workouts.map((w) => new Date(w.date).toDateString())
+    )
+
+    let streak = 0
+    const currentDate = new Date()
+
+    while (dateSet.has(currentDate.toDateString())) {
+      streak++
+      currentDate.setDate(currentDate.getDate() - 1)
+    }
+
+    return streak
+  }
   return (
-    <main className="p-6 w-[95%] max-w-[1400px] mx-auto">
-      <div className="">
-        <h1 className="text-3xl font-bold">ダッシュボード</h1>
-        <p className="text-muted-foreground">
-          {new Date().toLocaleDateString('ja-JP', {
-            year: 'numeric',
-            month: '2-digit',
-            day: '2-digit',
-          })}
-        </p>
-        <DialogCloseButton />
+    <main className="p-6 w-[95%] max-w-[1300px] mx-auto">
+      <div className="mb-8 flex justify-between gap-10">
+        <div className="flex flex-col">
+          <h1 className="text-3xl font-bold">ダッシュボード</h1>
+          <p className="text-muted-foreground">
+            {new Date().toLocaleDateString('ja-JP', {
+              year: 'numeric',
+              month: '2-digit',
+              day: '2-digit',
+            })}
+          </p>
+        </div>
+        <div>
+          <DialogCloseButton />
+        </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">
@@ -56,7 +76,7 @@ export default async function DashboardPage() {
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
-              {/* {getTotalWorkouts()} */}日
+              {getCurrentStreak(workouts)}日
             </div>
             <p className="text-xs text-muted-foreground">最近の記録</p>
           </CardContent>

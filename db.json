@@ -17,97 +17,33 @@
       ]
     },
     {
-      "id": "f48ef2f1-6818-4f70-8741-601c181cf075",
-      "userId": "u1",
-      "date": "2025-06-28",
-      "note": "",
-      "records": [
-        {
-          "id": "9d29425a-1703-4e8b-b119-e90e8d8432e6",
-          "exercise": "ベンチプレス",
-          "weight": 90,
-          "reps": 8,
-          "sets": 3,
-          "memo": ""
-        }
-      ]
-    },
-    {
-      "id": "3b223f81-1881-496b-bae3-4d1a2bf70178",
-      "userId": "u1",
-      "date": "2025-06-28",
-      "note": "",
-      "records": [
-        {
-          "id": "c77ba82e-7fb1-46f3-8427-07c53c54b7e9",
-          "exercise": "スクワット",
-          "weight": 90,
-          "reps": 7,
-          "sets": 2,
-          "memo": ""
-        }
-      ]
-    },
-    {
-      "id": "19fd323b-bbe1-4f2b-a62f-95182bd5702d",
-      "userId": "u1",
-      "date": "2025-06-28",
-      "note": "",
-      "records": [
-        {
-          "id": "cecd47f2-e247-4817-9678-056c014fef9a",
-          "exercise": "デットリフト",
-          "weight": 120,
-          "reps": 8,
-          "sets": 12,
-          "memo": ""
-        }
-      ]
-    },
-    {
-      "id": "df4baf2d-67e8-49a2-96de-cf916a37d92b",
+      "id": "6a08b56f-3920-4c1e-8abd-58f392c0cd5a",
       "userId": "u1",
       "date": "2025-06-29",
       "note": "",
       "records": [
         {
-          "id": "1d4b50c4-4c2f-42bb-8d4c-0708334e4a18",
+          "id": "84700855-3124-4b43-8fff-00ccaf0a430c",
           "exercise": "ベンチ",
-          "weight": 60,
-          "reps": 2,
-          "sets": 2,
+          "weight": 1,
+          "reps": 1,
+          "sets": 1,
           "memo": ""
         }
       ]
     },
     {
-      "id": "1ede2619-a7c5-4526-a6cf-1d75d6cc399e",
+      "id": "e59412d8-3931-48c6-8852-f06e62e9ab23",
       "userId": "u1",
-      "date": "2025-06-29",
+      "date": "2025-06-28",
       "note": "",
       "records": [
         {
-          "id": "20466088-a1b6-4f4c-9e6e-5c8acfb5d8cd",
-          "exercise": "スクワット",
-          "weight": 80,
-          "reps": 8,
-          "sets": 2,
-          "memo": ""
-        }
-      ]
-    },
-    {
-      "id": "d3f4b9db-ecb7-42a5-b40c-9814f017cd5e",
-      "userId": "u1",
-      "date": "2025-06-29",
-      "note": "",
-      "records": [
-        {
-          "id": "6e56d616-7228-44ec-89ae-3ce0a75ebf85",
-          "exercise": "スクワット",
-          "weight": 150,
-          "reps": 8,
-          "sets": 3,
+          "id": "9038f0ed-5db1-4bef-bf68-2275dbe386da",
+          "exercise": "aa",
+          "weight": 12,
+          "reps": 1,
+          "sets": 1,
           "memo": ""
         }
       ]
