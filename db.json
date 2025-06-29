@@ -95,6 +95,22 @@
           "memo": ""
         }
       ]
+    },
+    {
+      "id": "d3f4b9db-ecb7-42a5-b40c-9814f017cd5e",
+      "userId": "u1",
+      "date": "2025-06-29",
+      "note": "",
+      "records": [
+        {
+          "id": "6e56d616-7228-44ec-89ae-3ce0a75ebf85",
+          "exercise": "スクワット",
+          "weight": 150,
+          "reps": 8,
+          "sets": 3,
+          "memo": ""
+        }
+      ]
     }
   ]
 }

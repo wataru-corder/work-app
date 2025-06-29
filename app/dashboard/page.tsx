@@ -11,9 +11,12 @@ export default async function DashboardPage() {
 
   const todyWorkout = workouts.filter((workout) => workout.date === today)
 
-  // const todayWorkouts = () => {}
-  // const getTotalWorkouts = () => {}
-  // const getTotalVolume = () => {}
+  const getTotalVolume = () => {
+    const today = todyWorkout.map((t) => t.records)
+    const weight = today.map((r) => r.map((t) => t.weight * t.reps * t.sets))
+    const totalWeight = weight.flat().reduce((acc, curr) => acc + curr, 0)
+    return totalWeight
+  }
   return (
     <main className="p-6 w-[95%] max-w-[1400px] mx-auto">
       <div className="">
@@ -28,7 +31,7 @@ export default async function DashboardPage() {
         <DialogCloseButton />
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">
@@ -37,9 +40,7 @@ export default async function DashboardPage() {
             <Calendar className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">
-              {/* {todayWorkouts.length} */}
-            </div>
+            <div className="text-2xl font-bold">{todyWorkout.length}</div>
             <p className="text-xs text-muted-foreground">
               記録されたワークアウト
             </p>
@@ -49,13 +50,13 @@ export default async function DashboardPage() {
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">
-              総ワークアウト数
+              連続トレーニング日数
             </CardTitle>
             <Dumbbell className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
-              {/* {getTotalWorkouts()} */}
+              {/* {getTotalWorkouts()} */}日
             </div>
             <p className="text-xs text-muted-foreground">最近の記録</p>
           </CardContent>
@@ -68,7 +69,7 @@ export default async function DashboardPage() {
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
-              {/* {getTotalVolume().toLocaleString()} */}
+              {getTotalVolume().toLocaleString()}
             </div>
             <p className="text-xs text-muted-foreground">kg (最近の記録)</p>
           </CardContent>
