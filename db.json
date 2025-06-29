@@ -1,49 +1,33 @@
 {
   "workouts": [
     {
-      "id": "w1",
-      "userId": "u1",
-      "date": "2025-06-22",
-      "note": "胸トレ",
-      "records": [
-        {
-          "id": "r1",
-          "exercise": "ベンチプレス",
-          "weight": 60,
-          "reps": 10,
-          "sets": 3,
-          "memo": "調子よし"
-        }
-      ]
-    },
-    {
-      "id": "6a08b56f-3920-4c1e-8abd-58f392c0cd5a",
+      "id": "f480090b-1868-44f8-933c-99e2cc1cab2b",
       "userId": "u1",
       "date": "2025-06-29",
       "note": "",
       "records": [
         {
-          "id": "84700855-3124-4b43-8fff-00ccaf0a430c",
+          "id": "58490f39-781c-4237-b7a7-41aefff30853",
           "exercise": "ベンチ",
-          "weight": 1,
-          "reps": 1,
+          "weight": 60,
+          "reps": 7,
           "sets": 1,
           "memo": ""
         }
       ]
     },
     {
-      "id": "e59412d8-3931-48c6-8852-f06e62e9ab23",
+      "id": "3563c17a-599f-4dfa-8dd8-2d3223021f81",
       "userId": "u1",
-      "date": "2025-06-28",
+      "date": "2025-06-29",
       "note": "",
       "records": [
         {
-          "id": "9038f0ed-5db1-4bef-bf68-2275dbe386da",
-          "exercise": "aa",
-          "weight": 12,
-          "reps": 1,
-          "sets": 1,
+          "id": "97b0248c-ebe7-4be9-be8b-94cfb749a6a9",
+          "exercise": "スクワット",
+          "weight": 80,
+          "reps": 4,
+          "sets": 3,
           "memo": ""
         }
       ]

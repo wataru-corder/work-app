@@ -97,7 +97,7 @@ export default async function DashboardPage() {
       </div>
 
       {/* 今日のトレーニング記録の表示 */}
-      <div className="w-full lg:w-2/3">
+      <div className="w-full">
         <WorkoutList workout={todyWorkout} />
       </div>
     </main>
