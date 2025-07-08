@@ -15,6 +15,7 @@ import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
+import { useRouter } from 'next/navigation'
 
 const signInSchema = z.object({
   email: z.string().email('有効なメールアドレスを入力してください'),
@@ -25,7 +26,7 @@ type SignInForm = z.infer<typeof signInSchema>
 const SignInForm = () => {
   const [isLoading, setIsLoading] = useState(false)
   const [showPassword, setShowPassword] = useState(false)
-
+  const router = useRouter()
   const {
     register,
     handleSubmit,
@@ -34,9 +35,28 @@ const SignInForm = () => {
     resolver: zodResolver(signInSchema),
   })
 
-  const onSubmit = (data: SignInForm) => {
+  const onSubmit = async (data: SignInForm) => {
     setIsLoading(true)
-    console.log(data)
+    try {
+      const res = await fetch('/api/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      })
+      const result = await res.json()
+      if (res.ok) {
+        router.push('/dashboard')
+      } else {
+        alert(result.message || 'ログインに失敗しました')
+      }
+      console.log('res.ok:', res.ok)
+      console.log('status:', res.status)
+      console.log('result:', result)
+    } catch (error) {
+      alert('通信エラーが発生しました')
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   return (
