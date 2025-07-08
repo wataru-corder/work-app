@@ -12,10 +12,10 @@ export default async function DashboardPage() {
 
   const today = new Date().toISOString().slice(0, 10)
 
-  const todyWorkout = workouts.filter((workout) => workout.date === today)
+  const todayWorkout = workouts.filter((workout) => workout.date === today)
 
   const getTotalVolume = (): number => {
-    const today = todyWorkout.map((t) => t.records)
+    const today = todayWorkout.map((t) => t.records)
     const weight = today.map((r) => r.map((t) => t.weight * t.reps * t.sets))
     const totalWeight = weight.flat().reduce((acc, curr) => acc + curr, 0)
     return totalWeight
@@ -62,7 +62,7 @@ export default async function DashboardPage() {
             <Calendar className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{todyWorkout.length}</div>
+            <div className="text-2xl font-bold">{todayWorkout.length}</div>
             <p className="text-xs text-muted-foreground">
               記録されたワークアウト
             </p>
@@ -117,7 +117,7 @@ export default async function DashboardPage() {
 
         <TabsContent value="today" className="space-y-4">
           <div className="w-full">
-            <WorkoutList workout={todyWorkout} />
+            <WorkoutList workout={todayWorkout} />
           </div>
         </TabsContent>
 
