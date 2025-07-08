@@ -1,3 +1,20 @@
 {
-  "workouts": []
+  "workouts": [
+    {
+      "id": "15a33933-47b5-404e-b567-392f0cea68b1",
+      "userId": "u1",
+      "date": "2025-07-04",
+      "note": "",
+      "records": [
+        {
+          "id": "bf2ddc2e-19b1-4b96-bf0b-0fa3987ce57d",
+          "exercise": "ベンチ",
+          "weight": 60,
+          "reps": 8,
+          "sets": 1,
+          "memo": ""
+        }
+      ]
+    }
+  ]
 }
