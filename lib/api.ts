@@ -21,3 +21,11 @@ export async function deleteWorkouts(id: string) {
   })
   return res.json()
 }
+export async function editWorkouts(id: string, workout: Workout) {
+  const res = await fetch(`${API_URL}/workouts/${id}`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(workout),
+  })
+  return res.json()
+}
