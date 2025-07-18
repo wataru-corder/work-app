@@ -17,22 +17,6 @@
       ]
     },
     {
-      "id": "0dfa3f75-c5ae-4f0e-920f-3a59eaad5dff",
-      "userId": "u1",
-      "date": "2025-07-18",
-      "note": "",
-      "records": [
-        {
-          "id": "df93dbb4-1f36-4d16-8260-c4fd9a8cbf35",
-          "exercise": "ベンチプレス",
-          "weight": 101,
-          "reps": 10,
-          "sets": 5,
-          "memo": ""
-        }
-      ]
-    },
-    {
       "id": "7f250ae4-1ab9-4753-b5f6-82d6fedd5d2a",
       "userId": "u1",
       "date": "2025-07-16",
@@ -45,6 +29,54 @@
           "reps": 9,
           "sets": 3,
           "memo": ""
+        }
+      ]
+    },
+    {
+      "id": "7f75ba8a-5da2-46c6-bbff-b5101d640258",
+      "userId": "u1",
+      "date": "2025-07-18",
+      "note": "111",
+      "records": [
+        {
+          "id": "3b23ece6-d613-44ed-9442-65fff306da63",
+          "exercise": "111",
+          "weight": 111,
+          "reps": 111,
+          "sets": 11,
+          "memo": "111"
+        }
+      ]
+    },
+    {
+      "id": "a9ba73dc-4316-4a7a-9da2-285495170de8",
+      "userId": "u1",
+      "date": "2025-07-18",
+      "note": "1",
+      "records": [
+        {
+          "id": "32621fa3-b00d-4399-8a5c-e00ae6f87fb3",
+          "exercise": "11",
+          "weight": 11,
+          "reps": 11,
+          "sets": 11,
+          "memo": "1"
+        }
+      ]
+    },
+    {
+      "id": "f5346aef-f605-43aa-8eea-e294c3270c35",
+      "userId": "u1",
+      "date": "2025-07-18",
+      "note": "1",
+      "records": [
+        {
+          "id": "0ab17a6c-efad-4402-b677-4d0793870087",
+          "exercise": "11",
+          "weight": 11,
+          "reps": 11,
+          "sets": 11,
+          "memo": "1"
         }
       ]
     }

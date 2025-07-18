@@ -16,12 +16,15 @@ type workoutListProps = {
 const WorkoutList = ({ workout }: workoutListProps) => {
   const router = useRouter()
   const handleDelete = async (id: string) => {
-    try {
-      await deleteWorkouts(id)
-      router.refresh()
-    } catch (err) {
-      alert('削除失敗')
-      console.log(err)
+    const res = confirm('削除しますか？')
+    if (res) {
+      try {
+        await deleteWorkouts(id)
+        router.refresh()
+      } catch (err) {
+        alert('削除失敗')
+        console.log(err)
+      }
     }
   }
 
@@ -56,7 +59,7 @@ const WorkoutList = ({ workout }: workoutListProps) => {
             <div className="flex gap-3">
               <Dialog>
                 <DialogTrigger asChild>
-                  <button>
+                  <button className="cursor-pointer">
                     <Edit className="h-4 w-4" />
                   </button>
                 </DialogTrigger>
@@ -65,7 +68,10 @@ const WorkoutList = ({ workout }: workoutListProps) => {
                 </DialogContent>
               </Dialog>
 
-              <button onClick={() => handleDelete(workout.id)}>
+              <button
+                onClick={() => handleDelete(workout.id)}
+                className="cursor-pointer"
+              >
                 <Trash2 className="h-4 w-4 text-red-500" />
               </button>
             </div>
