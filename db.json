@@ -17,16 +17,32 @@
       ]
     },
     {
-      "id": "765a4bec-aeb1-4b23-b689-cbb3c95e3567",
+      "id": "0dfa3f75-c5ae-4f0e-920f-3a59eaad5dff",
       "userId": "u1",
       "date": "2025-07-18",
       "note": "",
       "records": [
         {
-          "id": "6fe522aa-3377-4863-82e9-e62e16d57ab0",
+          "id": "df93dbb4-1f36-4d16-8260-c4fd9a8cbf35",
           "exercise": "ベンチプレス",
-          "weight": 42,
-          "reps": 8,
+          "weight": 101,
+          "reps": 10,
+          "sets": 5,
+          "memo": ""
+        }
+      ]
+    },
+    {
+      "id": "7f250ae4-1ab9-4753-b5f6-82d6fedd5d2a",
+      "userId": "u1",
+      "date": "2025-07-16",
+      "note": "",
+      "records": [
+        {
+          "id": "18d20ec2-053b-4607-9090-a11516fd59ee",
+          "exercise": "スクワット",
+          "weight": 220,
+          "reps": 9,
           "sets": 3,
           "memo": ""
         }

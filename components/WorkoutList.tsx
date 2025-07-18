@@ -7,7 +7,6 @@ import { DialogCloseButton } from './DialogCloseButton'
 import { deleteWorkouts } from '@/lib/api'
 import { useRouter } from 'next/navigation'
 import { Dialog, DialogContent, DialogTrigger } from './ui/dialog'
-import WorkoutForm from './WorkoutForm'
 import EditWorkoutForm from './EditWorkoutForm'
 
 type workoutListProps = {
@@ -25,14 +24,6 @@ const WorkoutList = ({ workout }: workoutListProps) => {
       console.log(err)
     }
   }
-  // const handleEdit = async (id: string, workout: Workout) => {
-  //   try {
-  //     await handleEdit(id, workout)
-  //   } catch (err) {
-  //     alert('編集失敗')
-  //     console.log(err)
-  //   }
-  // }
 
   if (workout.length === 0) {
     return (
@@ -65,7 +56,6 @@ const WorkoutList = ({ workout }: workoutListProps) => {
             <div className="flex gap-3">
               <Dialog>
                 <DialogTrigger asChild>
-                  {/* <button onClick={() => handleEdit(workout.id, workout)}> */}
                   <button>
                     <Edit className="h-4 w-4" />
                   </button>
