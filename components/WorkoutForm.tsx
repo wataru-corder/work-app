@@ -49,13 +49,6 @@ const WorkoutForm = () => {
     try {
       await postWorkouts(workout)
 
-      // リセット
-      setExercise('')
-      setWeight('')
-      setReps('')
-      setSets('')
-      setMemo('')
-      setDate(new Date().toISOString().slice(0, 10))
       router.refresh()
     } catch (err) {
       alert('エラーが発生しました')
