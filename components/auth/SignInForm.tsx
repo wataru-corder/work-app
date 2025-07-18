@@ -49,11 +49,9 @@ const SignInForm = () => {
       } else {
         alert(result.message || 'ログインに失敗しました')
       }
-      console.log('res.ok:', res.ok)
-      console.log('status:', res.status)
-      console.log('result:', result)
     } catch (error) {
       alert('通信エラーが発生しました')
+      console.log(error)
     } finally {
       setIsLoading(false)
     }

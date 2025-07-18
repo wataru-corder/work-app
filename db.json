@@ -15,6 +15,22 @@
           "memo": ""
         }
       ]
+    },
+    {
+      "id": "765a4bec-aeb1-4b23-b689-cbb3c95e3567",
+      "userId": "u1",
+      "date": "2025-07-18",
+      "note": "",
+      "records": [
+        {
+          "id": "6fe522aa-3377-4863-82e9-e62e16d57ab0",
+          "exercise": "ベンチプレス",
+          "weight": 42,
+          "reps": 8,
+          "sets": 3,
+          "memo": ""
+        }
+      ]
     }
   ]
 }
