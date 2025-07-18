@@ -8,6 +8,7 @@ import { deleteWorkouts } from '@/lib/api'
 import { useRouter } from 'next/navigation'
 import { Dialog, DialogContent, DialogTrigger } from './ui/dialog'
 import WorkoutForm from './WorkoutForm'
+import EditWorkoutForm from './EditWorkoutForm'
 
 type workoutListProps = {
   workout: Workout[]
@@ -70,7 +71,7 @@ const WorkoutList = ({ workout }: workoutListProps) => {
                   </button>
                 </DialogTrigger>
                 <DialogContent>
-                  <WorkoutForm />
+                  <EditWorkoutForm workout={workout} />
                 </DialogContent>
               </Dialog>
 
