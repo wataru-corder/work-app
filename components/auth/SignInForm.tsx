@@ -53,6 +53,7 @@ const SignInForm = () => {
       console.log('status:', res.status)
       console.log('result:', result)
     } catch (error) {
+      console.error(error)
       alert('通信エラーが発生しました')
     } finally {
       setIsLoading(false)
