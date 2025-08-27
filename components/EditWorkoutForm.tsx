@@ -1,6 +1,6 @@
 'use client'
 
-import { postWorkouts } from '@/lib/api'
+import { editWorkouts } from '@/lib/api'
 import {
   Calendar,
   Dumbbell,
@@ -12,43 +12,46 @@ import {
 } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 import React, { useState } from 'react'
-import { v4 as uuid } from 'uuid'
 import { DialogTitle } from './ui/dialog'
+import { Workout } from '@/types'
 
-const WorkoutForm = () => {
+type workoutListProps = {
+  workout: Workout
+}
+
+const EditWorkoutForm = ({ workout }: workoutListProps) => {
   const [date, setDate] = useState(new Date().toISOString().slice(0, 10))
-  const [exercise, setExercise] = useState('')
-  const [weight, setWeight] = useState('')
-  const [reps, setReps] = useState('')
-  const [sets, setSets] = useState('')
-  const [memo, setMemo] = useState('')
+  const [exercise, setExercise] = useState(workout.records[0].exercise)
+  const [weight, setWeight] = useState(workout.records[0].weight)
+  const [reps, setReps] = useState(workout.records[0].reps)
+  const [sets, setSets] = useState(workout.records[0].sets)
+  const [memo, setMemo] = useState(workout.records[0].memo)
 
   const router = useRouter()
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    const workoutId = uuid()
-    const recordId = uuid()
-    const workout = {
-      id: workoutId,
-      userId: 'u1', // 仮ユーザーID（将来的にSupabaseから取得）
+
+    const updatedWorkout: Workout = {
+      id: workout.id,
+      userId: workout.userId, // 仮ユーザーID（将来的にSupabaseから取得）
       date,
       note: memo,
       records: [
         {
-          id: recordId,
+          id: workout.records[0].id,
           exercise,
-          weight: parseFloat(weight),
-          reps: parseInt(reps),
-          sets: parseInt(sets),
+          weight: parseFloat(weight.toString()),
+          reps: parseInt(reps.toString()),
+          sets: parseInt(sets.toString()),
           memo,
         },
       ],
     }
 
     try {
-      await postWorkouts(workout)
-
+      await editWorkouts(updatedWorkout.id, updatedWorkout)
+      alert('編集完了しました')
       router.refresh()
     } catch (err) {
       alert('エラーが発生しました')
@@ -105,7 +108,7 @@ const WorkoutForm = () => {
             <Weight className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
             <input
               value={weight}
-              onChange={(e) => setWeight(e.target.value)}
+              onChange={(e) => setWeight(Number(e.target.value))}
               type="text"
               className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
               placeholder="60.0"
@@ -124,7 +127,7 @@ const WorkoutForm = () => {
               <Hash className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
               <input
                 value={reps}
-                onChange={(e) => setReps(e.target.value)}
+                onChange={(e) => setReps(Number(e.target.value))}
                 type="number"
                 className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
                 placeholder="8"
@@ -142,7 +145,7 @@ const WorkoutForm = () => {
               <Target className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
               <input
                 value={sets}
-                onChange={(e) => setSets(e.target.value)}
+                onChange={(e) => setSets(Number(e.target.value))}
                 type="number"
                 className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
                 placeholder="3"
@@ -182,4 +185,4 @@ const WorkoutForm = () => {
   )
 }
 
-export default WorkoutForm
+export default EditWorkoutForm

@@ -6,6 +6,8 @@ import { Card, CardContent } from './ui/card'
 import { DialogCloseButton } from './DialogCloseButton'
 import { deleteWorkouts } from '@/lib/api'
 import { useRouter } from 'next/navigation'
+import { Dialog, DialogContent, DialogTrigger } from './ui/dialog'
+import EditWorkoutForm from './EditWorkoutForm'
 
 type workoutListProps = {
   workout: Workout[]
@@ -14,12 +16,15 @@ type workoutListProps = {
 const WorkoutList = ({ workout }: workoutListProps) => {
   const router = useRouter()
   const handleDelete = async (id: string) => {
-    try {
-      await deleteWorkouts(id)
-      router.refresh()
-    } catch (err) {
-      alert('削除失敗')
-      console.log(err)
+    const res = confirm('削除しますか？')
+    if (res) {
+      try {
+        await deleteWorkouts(id)
+        router.refresh()
+      } catch (err) {
+        alert('削除失敗')
+        console.log(err)
+      }
     }
   }
 
@@ -52,8 +57,21 @@ const WorkoutList = ({ workout }: workoutListProps) => {
               </span>
             </div>
             <div className="flex gap-3">
-              <Edit className="h-4 w-4" />
-              <button onClick={() => handleDelete(workout.id)}>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <button className="cursor-pointer">
+                    <Edit className="h-4 w-4" />
+                  </button>
+                </DialogTrigger>
+                <DialogContent>
+                  <EditWorkoutForm workout={workout} />
+                </DialogContent>
+              </Dialog>
+
+              <button
+                onClick={() => handleDelete(workout.id)}
+                className="cursor-pointer"
+              >
                 <Trash2 className="h-4 w-4 text-red-500" />
               </button>
             </div>
